@@ -42,9 +42,14 @@ def query_ollama(prompt):
         return ""
 
 def main():
-    prompt = """Please write an index.html file which acts as a frontend for ollama serve. It should allow the user to enter a prompt in a text box and then it should format output with anything between <think></think> tags removed and just the rest of the output shown to the user.
-    """
+    if len(sys.argv) > 1:
+        prompt = ' '.join(sys.argv[1:])
+    else:
+        # If no argument, prompt user for input
+        prompt = input("Enter your query: ")
+
     response = query_ollama(prompt)
+    print("\nAI Response:")
     print(response)
 
 if __name__ == "__main__":
