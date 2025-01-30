@@ -78,12 +78,13 @@
                 const data = await response.json();
 
                 // Extract the content and remove markdown formatting
-                let output = data.response.result.content;
+                let output = data.response;
 
                 // Remove any markdown formatting (e.g., backticks, underscores)
                 output = output.replace(/```[\s\S]*?```/g, ''); // Remove code blocks
                 output = output.replace(/_+/g, ''); // Remove underscores
                 output = output.replace(/#+/g, ''); // Remove headers
+                output = output.replace(/<think>[\s\S]*?<\/think>/g, ''); // Remove thinking
 
                 document.getElementById('response-container').textContent = output;
 
