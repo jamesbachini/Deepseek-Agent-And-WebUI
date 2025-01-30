@@ -1,5 +1,8 @@
 # Deepseek Agent And WebUI
- A python agent and web ui for deepseek using ollama serve on the backend
+
+https://youtu.be/uwC0gflw8rM
+
+A python agent and web ui for deepseek using ollama serve on the backend
 
 agent.py - is a simple python agent that interacts with ollama serve
 
